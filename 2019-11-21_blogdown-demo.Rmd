@@ -1,0 +1,64 @@
+---
+title: "blogdown demo"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+## Make a blogdown project
+
+Open up RStudio, New project -> Blogdownproject
+
+`blogdown::serve_site()`
+
+## Tour of directory
+
+Check out the following directories
+
+- `content`
+- `templates`
+- `static`
+- `public`
+- `themes`
+
+## Install new theme
+
+I've had mixed results on downloading themes featured on gohugo.io. The cost of not really knowing how things work and downloading a fancy theme means that I can't really fix things when they break. 
+
+Example: [Charaka](https://themes.gohugo.io/charaka-hugo-theme/)
+
+```{r}
+blogdown::install_theme("natarajmb/charaka-hugo-theme")
+```
+
+
+
+Here's one that works
+
+I like simple themes, so let's try using [Tailwind Journal](https://github.com/ianrodrigues/hugo-tailwind-journal)
+
+```{r}
+blogdown::install_theme("ianrodrigues/hugo-tailwind-journal")
+```
+
+Also another that works, [Solar](https://themes.gohugo.io/solar-theme-hugo/)
+```{r}
+blogdown::install_theme("bake/solar-theme-hugo")
+```
+
+
+## Ship to netlify
+
+Netlify works on building your dir from a github repo, so we'll need to put the dir under version control, and we can ignore `public/`, as that will be rebuilt on Netlify
+
+Push to a github repo
+
+log into Netlify
+
+In setting up github, give it access to all your current and future repos
+
+deploy, and we're good!
+
+
